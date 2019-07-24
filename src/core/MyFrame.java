@@ -9,42 +9,42 @@ import static core.Main.*;
 
 public class MyFrame extends JFrame implements ActionListener {
 
-    public MyButtons a;
-    public MyButtons b;
-    public MyButtons c;
-    public MyButtons d;
-    public MyButtons e;
-    public MyButtons f;
-    public MyButtons g;
-    public MyButtons h;
-    public MyButtons i;
-    public MyButtons j;
-    public MyButtons k;
-    public MyButtons l;
-    public MyButtons m;
-    public MyButtons n;
-    public MyButtons o;
-    public MyButtons p;
-    public MyButtons q;
-    public MyButtons r;
-    public MyButtons s;
-    public MyButtons t;
-    public MyButtons u;
-    public MyButtons v;
-    public MyButtons w;
-    public MyButtons x;
-    public MyButtons y;
-    public MyButtons z;
+    private MyButtons a;
+    private MyButtons b;
+    private MyButtons c;
+    private MyButtons d;
+    private MyButtons e;
+    private MyButtons f;
+    private MyButtons g;
+    private MyButtons h;
+    private MyButtons i;
+    private MyButtons j;
+    private MyButtons k;
+    private MyButtons l;
+    private MyButtons m;
+    private MyButtons n;
+    private MyButtons o;
+    private MyButtons p;
+    private MyButtons q;
+    private MyButtons r;
+    private MyButtons s;
+    private MyButtons t;
+    private MyButtons u;
+    private MyButtons v;
+    private MyButtons w;
+    private MyButtons x;
+    private MyButtons y;
+    private MyButtons z;
     JLabel textLabel = new JLabel();
-    String guessInFrame;
 
     public MyFrame(){
         super("HANGMAN x_x");
-        guessInFrame = "HANGMAN";
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         setSize(new Dimension(500, 500));
         JPanel buttonsPanel = new JPanel(new GridLayout(2, 13));
 
+        //creating the buttons...
 
         a = new MyButtons ("A");
         b = new MyButtons ("B");
@@ -73,7 +73,7 @@ public class MyFrame extends JFrame implements ActionListener {
         y = new MyButtons ("Y");
         z = new MyButtons ("Z");
 
-        System.out.println(a.getChar());
+        //adding actionListener to our buttons...
 
         a.addActionListener(this);
         b.addActionListener(this);
@@ -131,10 +131,12 @@ public class MyFrame extends JFrame implements ActionListener {
         buttonsPanel.add(z);
 
         textLabel.setHorizontalAlignment(JLabel.CENTER);
+        textLabel.setVerticalAlignment(JLabel.CENTER);
+        textLabel.setFont(new Font("Bradley Hand ITC" , Font.PLAIN , 60));
         textLabel.setText(Main.toStringGuess());
 
         add(buttonsPanel , BorderLayout.SOUTH);
-        add(textLabel , BorderLayout.NORTH);
+        add(textLabel , BorderLayout.CENTER);
         setVisible(true);
     }
 
@@ -152,11 +154,11 @@ public class MyFrame extends JFrame implements ActionListener {
             System.out.println("TRUE guess");
             //////////////////
             boolean flag = false;
-            for(int i = 0; i < guessInFrame.length(); i++) {//check
-                if (guessInFrame.charAt(i) == button.getChar()) {
+            for(int i = 0; i < myWord.length(); i++) {//check
+                if (myWord.charAt(i) == button.getChar()) {
                     guess[i] = button.getChar();
                     correctAnswers++;
-                    if (correctAnswers >= guessInFrame.length()) {
+                    if (correctAnswers >= myWord.length()) {
                         textLabel.setText(Main.toStringGuess());
                         Main.printTheGuess();
                         System.out.println("congratulations!!");
@@ -276,4 +278,6 @@ public class MyFrame extends JFrame implements ActionListener {
         y.setEnabled(false);
         z.setEnabled(false);
     }
+
+
 }

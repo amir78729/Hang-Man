@@ -14,52 +14,54 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-//        System.out.println("USER 1:\nWhat is your word?");
+        JFrame start = new WhatIsYourWordFrame();
+        System.out.println("USER 1:\nWhat is your word?");
 //        myWord = scanner.nextLine();
-        myWord = "hangman";
-        myWord = myWord.toUpperCase();
+//        myWord = myWord.toUpperCase();
         isDead = false;
-        guess= new char[myWord.length()];
-        wrongAnswers = 0;
-        correctAnswers = 0;
-        JFrame frame = new MyFrame();
+//        guess= new char[myWord.length()];
+//        wrongAnswers = 0;
+//        correctAnswers = 0;
+//
+//        for (int i = 0; i < myWord.length(); i++)
+//            guess[i] = '_' ;
 
-        for (int i = 0; i < myWord.length(); i++)
-            guess[i] = '_' ;
+//        JFrame frame = new MyFrame();
 
-        while(!isDead){
-            System.out.println("USER 2\nGuess a character:");
-            guessedChar = scanner.next().charAt(0);
-            //if user's guess was true...
-            if(contains(myWord , guessedChar)){
-                boolean flag = false;
-                for(int i = 0; i < myWord.length(); i++) {
-                    if (myWord.charAt(i) == guessedChar) {
-                        guess[i] = guessedChar;
-                        correctAnswers++;
-                        if (correctAnswers >= myWord.length()) {
-                            System.out.println("congratulations!!");
-                            flag = true;
-                            break;
-                        }
-                    }
-                }
-                if (flag)
-                    break;
-            }
-            //if user's guess was false...
-            else{
-                wrongAnswers++;
-                if(wrongAnswers >= 6){
-                    System.out.println("YOU LOSE!");
-                    break;
-                }
 
-            }
-            printTheGuess();
-            System.out.println(toStringGuess());
-
-        }
+//        while(!isDead){
+//            System.out.println("USER 2\nGuess a character:");
+//            guessedChar = scanner.next().charAt(0);
+//            //if user's guess was true...
+//            if(contains(myWord , guessedChar)){
+//                boolean flag = false;
+//                for(int i = 0; i < myWord.length(); i++) {
+//                    if (myWord.charAt(i) == guessedChar) {
+//                        guess[i] = guessedChar;
+//                        correctAnswers++;
+//                        if (correctAnswers >= myWord.length()) {
+//                            System.out.println("congratulations!!");
+//                            flag = true;
+//                            break;
+//                        }
+//                    }
+//                }
+//                if (flag)
+//                    break;
+//            }
+//            //if user's guess was false...
+//            else{
+//                wrongAnswers++;
+//                if(wrongAnswers >= 6){
+//                    System.out.println("YOU LOSE!");
+//                    break;
+//                }
+//
+//            }
+//            printTheGuess();
+//            System.out.println(toStringGuess());
+//
+//        }
     }
 
 
