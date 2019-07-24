@@ -16,7 +16,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 //        System.out.println("USER 1:\nWhat is your word?");
 //        myWord = scanner.nextLine();
-        myWord = "hang man";
+        myWord = "hangman";
         myWord = myWord.toUpperCase();
         isDead = false;
         guess= new char[myWord.length()];

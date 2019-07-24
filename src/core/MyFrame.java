@@ -5,41 +5,46 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static core.Main.*;
+
 public class MyFrame extends JFrame implements ActionListener {
 
-    public JButton a;
-    public JButton b;
-    public JButton c;
-    public JButton d;
-    public JButton e;
-    public JButton f;
-    public JButton g;
-    public JButton h;
-    public JButton i;
-    public JButton j;
-    public JButton k;
-    public JButton l;
-    public JButton m;
-    public JButton n;
-    public JButton o;
-    public JButton p;
-    public JButton q;
-    public JButton r;
-    public JButton s;
-    public JButton t;
-    public JButton u;
-    public JButton v;
-    public JButton w;
-    public JButton x;
-    public JButton y;
-    public JButton z;
+    public MyButtons a;
+    public MyButtons b;
+    public MyButtons c;
+    public MyButtons d;
+    public MyButtons e;
+    public MyButtons f;
+    public MyButtons g;
+    public MyButtons h;
+    public MyButtons i;
+    public MyButtons j;
+    public MyButtons k;
+    public MyButtons l;
+    public MyButtons m;
+    public MyButtons n;
+    public MyButtons o;
+    public MyButtons p;
+    public MyButtons q;
+    public MyButtons r;
+    public MyButtons s;
+    public MyButtons t;
+    public MyButtons u;
+    public MyButtons v;
+    public MyButtons w;
+    public MyButtons x;
+    public MyButtons y;
+    public MyButtons z;
     JLabel textLabel = new JLabel();
+    String guessInFrame;
 
     public MyFrame(){
         super("HANGMAN x_x");
+        guessInFrame = "HANGMAN";
         setLayout(new BorderLayout());
         setSize(new Dimension(500, 500));
         JPanel buttonsPanel = new JPanel(new GridLayout(2, 13));
+
 
         a = new MyButtons ("A");
         b = new MyButtons ("B");
@@ -67,6 +72,8 @@ public class MyFrame extends JFrame implements ActionListener {
         x = new MyButtons ("X");
         y = new MyButtons ("Y");
         z = new MyButtons ("Z");
+
+        System.out.println(a.getChar());
 
         a.addActionListener(this);
         b.addActionListener(this);
@@ -122,8 +129,10 @@ public class MyFrame extends JFrame implements ActionListener {
         buttonsPanel.add(x);
         buttonsPanel.add(y);
         buttonsPanel.add(z);
+
         textLabel.setHorizontalAlignment(JLabel.CENTER);
         textLabel.setText(Main.toStringGuess());
+
         add(buttonsPanel , BorderLayout.SOUTH);
         add(textLabel , BorderLayout.NORTH);
         setVisible(true);
@@ -134,77 +143,137 @@ public class MyFrame extends JFrame implements ActionListener {
      * this methid is going to call when the user choose a character in the frame
      * @param isTheAnswerCorrect
      */
-    public void press(JButton button,  boolean isTheAnswerCorrect){
+    public void press(MyButtons button,  boolean isTheAnswerCorrect){
+        System.out.println("button pressed");
         //if your answer was TRUE...
         if(isTheAnswerCorrect){
-            button.setBackground(new Color(0,90,0));
+            button.setBackground(new Color(0,150,0));
             button.setForeground(Color.white);
+            System.out.println("TRUE guess");
+            //////////////////
+            boolean flag = false;
+            for(int i = 0; i < guessInFrame.length(); i++) {//check
+                if (guessInFrame.charAt(i) == button.getChar()) {
+                    guess[i] = button.getChar();
+                    correctAnswers++;
+                    if (correctAnswers >= guessInFrame.length()) {
+                        textLabel.setText(Main.toStringGuess());
+                        Main.printTheGuess();
+                        System.out.println("congratulations!!");
+                        disableAllButtons();
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            if (flag)
+                return;
+        //////////////////
         }
         //if your answer was FALSE...
         else{
-            button.setBackground(new Color(90,0,0));
+            button.setBackground(new Color(150,0,0));
             button.setForeground(Color.white);
+            System.out.println("FALSE guess");
+        ///////////////////////
+            wrongAnswers++;
+            if(wrongAnswers >= 6){
+                System.out.println("YOU LOSE!");
+                disableAllButtons();
+                return;
+            }
+        ///////////////////////
         }
         button.setEnabled(false);
+        Main.printTheGuess();
+        textLabel.setText(Main.toStringGuess());
 //        textLabel.setVisible(false);
 //        textLabel.setVisible(true);
-        System.out.println("pressed");
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == a){
-            press( a , Main.contains(Main.myWord , 'A'));
+            press( a , Main.contains(myWord , 'A'));
         }else if (event.getSource() == b){
-            press( b , Main.contains(Main.myWord , 'B'));
+            press( b , Main.contains(myWord , 'B'));
         }else if (event.getSource() == c){
-            press( c , Main.contains(Main.myWord , 'C'));
+            press( c , Main.contains(myWord , 'C'));
         }else if (event.getSource() == d){
-            press( d , Main.contains(Main.myWord , 'D'));
+            press( d , Main.contains(myWord , 'D'));
         }else if (event.getSource() == e){
-            press( e , Main.contains(Main.myWord , 'E'));
+            press( e , Main.contains(myWord , 'E'));
         }else if (event.getSource() == f){
-            press( f , Main.contains(Main.myWord , 'F'));
+            press( f , Main.contains(myWord , 'F'));
         }else if (event.getSource() == g){
-            press( g , Main.contains(Main.myWord , 'G'));
+            press( g , Main.contains(myWord , 'G'));
         }else if (event.getSource() == h){
-            press( h , Main.contains(Main.myWord , 'H'));
+            press( h , Main.contains(myWord , 'H'));
         }else if (event.getSource() == i){
-            press( i , Main.contains(Main.myWord , 'I'));
+            press( i , Main.contains(myWord , 'I'));
         }else if (event.getSource() == j){
-            press( j , Main.contains(Main.myWord , 'J'));
+            press( j , Main.contains(myWord , 'J'));
         }else if (event.getSource() == k){
-            press( k , Main.contains(Main.myWord , 'K'));
+            press( k , Main.contains(myWord , 'K'));
         }else if (event.getSource() == l){
-            press( l , Main.contains(Main.myWord , 'L'));
+            press( l , Main.contains(myWord , 'L'));
         }else if (event.getSource() == m){
-            press( m , Main.contains(Main.myWord , 'M'));
+            press( m , Main.contains(myWord , 'M'));
         }else if (event.getSource() == n){
-            press( n , Main.contains(Main.myWord , 'N'));
+            press( n , Main.contains(myWord , 'N'));
         }else if (event.getSource() == o){
-            press( o , Main.contains(Main.myWord , 'O'));
+            press( o , Main.contains(myWord , 'O'));
         }else if (event.getSource() == p){
-            press( p , Main.contains(Main.myWord , 'P'));
+            press( p , Main.contains(myWord , 'P'));
         }else if (event.getSource() == q){
-            press( q , Main.contains(Main.myWord , 'Q'));
+            press( q , Main.contains(myWord , 'Q'));
         }else if (event.getSource() == r){
-            press( r , Main.contains(Main.myWord , 'R'));
+            press( r , Main.contains(myWord , 'R'));
         }else if (event.getSource() == s){
-            press( s , Main.contains(Main.myWord , 'S'));
+            press( s , Main.contains(myWord , 'S'));
         }else if (event.getSource() == t){
-            press( t , Main.contains(Main.myWord , 'T'));
+            press( t , Main.contains(myWord , 'T'));
         }else if (event.getSource() == u){
-            press( u , Main.contains(Main.myWord , 'U'));
+            press( u , Main.contains(myWord , 'U'));
         }else if (event.getSource() == v){
-            press( v , Main.contains(Main.myWord , 'V'));
+            press( v , Main.contains(myWord , 'V'));
         }else if (event.getSource() == w){
-            press( w , Main.contains(Main.myWord , 'W'));
+            press( w , Main.contains(myWord , 'W'));
         }else if (event.getSource() == x){
-            press( x , Main.contains(Main.myWord , 'X'));
+            press( x , Main.contains(myWord , 'X'));
         }else if (event.getSource() == y){
-            press( y , Main.contains(Main.myWord , 'Y'));
+            press( y , Main.contains(myWord , 'Y'));
         }else if (event.getSource() == z){
-            press( z , Main.contains(Main.myWord , 'Z'));
+            press( z , Main.contains(myWord , 'Z'));
         }
+    }
+
+    public void disableAllButtons(){
+        a.setEnabled(false);
+        b.setEnabled(false);
+        c.setEnabled(false);
+        d.setEnabled(false);
+        e.setEnabled(false);
+        f.setEnabled(false);
+        g.setEnabled(false);
+        h.setEnabled(false);
+        i.setEnabled(false);
+        j.setEnabled(false);
+        k.setEnabled(false);
+        l.setEnabled(false);
+        m.setEnabled(false);
+        n.setEnabled(false);
+        o.setEnabled(false);
+        p.setEnabled(false);
+        q.setEnabled(false);
+        r.setEnabled(false);
+        s.setEnabled(false);
+        t.setEnabled(false);
+        u.setEnabled(false);
+        v.setEnabled(false);
+        w.setEnabled(false);
+        x.setEnabled(false);
+        y.setEnabled(false);
+        z.setEnabled(false);
     }
 }
