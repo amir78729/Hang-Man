@@ -11,7 +11,7 @@ public class Main {
         guess= new char[myWord.length()];
         for (int i = 0; i < myWord.length(); i++)
             guess[i] = '_' ;
-        printTheGuess();
+
     }
 
 
