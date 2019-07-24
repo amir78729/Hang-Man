@@ -1,3 +1,5 @@
+package core;
+
 import javax.swing.*;
 import java.util.Scanner;
 
@@ -11,14 +13,16 @@ public class Main {
     public static int correctAnswers;
 
     public static void main(String[] args) {
-//        JFrame frame = new MyFrame();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("USER 1:\nWhat is your word?");
-        myWord = scanner.nextLine();
+//        System.out.println("USER 1:\nWhat is your word?");
+//        myWord = scanner.nextLine();
+        myWord = "hang man";
+        myWord = myWord.toUpperCase();
         isDead = false;
         guess= new char[myWord.length()];
         wrongAnswers = 0;
         correctAnswers = 0;
+        JFrame frame = new MyFrame();
 
         for (int i = 0; i < myWord.length(); i++)
             guess[i] = '_' ;
@@ -53,6 +57,7 @@ public class Main {
 
             }
             printTheGuess();
+            System.out.println(toStringGuess());
 
         }
     }
@@ -69,9 +74,15 @@ public class Main {
         System.out.println("wrong answers: " + wrongAnswers + "/6");
     }
 
+    public static String toStringGuess(){
+        String guessResult = "";
+        for (int i = 0; i < myWord.length(); i++)
+            guessResult = guessResult + guess[i] + " ";
+        return guessResult;
+    }
+
 
     public static boolean contains(String str, char chr ) {
-
         for(int i = 0; i < str.length(); i++)
             if(str.charAt(i) == chr)
                 return true;
