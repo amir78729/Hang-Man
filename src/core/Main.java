@@ -11,11 +11,12 @@ public class Main {
     public static char guessedChar;
     public static int wrongAnswers;
     public static int correctAnswers;
+    public static WhatIsYourWordFrame start;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        JFrame start = new WhatIsYourWordFrame();
-        System.out.println("USER 1:\nWhat is your word?");
+        start = new WhatIsYourWordFrame();
+//        System.out.println("USER 1:\nWhat is your word?");
 //        myWord = scanner.nextLine();
 //        myWord = myWord.toUpperCase();
         isDead = false;

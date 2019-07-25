@@ -163,6 +163,7 @@ public class MyFrame extends JFrame implements ActionListener {
                         Main.printTheGuess();
                         System.out.println("congratulations!!");
                         disableAllButtons();
+                        EndOfTheGameFrame endOfTheGameFrame = new EndOfTheGameFrame(isDead);
                         flag = true;
                         break;
                     }
@@ -181,7 +182,9 @@ public class MyFrame extends JFrame implements ActionListener {
             wrongAnswers++;
             if(wrongAnswers >= 6){
                 System.out.println("YOU LOSE!");
+                isDead = true;
                 disableAllButtons();
+                EndOfTheGameFrame endOfTheGameFrame = new EndOfTheGameFrame(isDead);
                 return;
             }
         ///////////////////////

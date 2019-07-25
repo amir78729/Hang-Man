@@ -13,6 +13,11 @@ public class WhatIsYourWordFrame extends JFrame implements ActionListener {
     private JLabel question;
     private JTextField nameArea;
     private JButton play;
+    private JFrame frame;
+
+    public void closeGameFrame() {
+        this.frame.dispose();
+    }
 
     public WhatIsYourWordFrame(){
         super("welcome to \"HANGMAN\"! (x_x)");
@@ -70,7 +75,7 @@ public class WhatIsYourWordFrame extends JFrame implements ActionListener {
             for (int i = 0; i < myWord.length(); i++)
                 guess[i] = '_' ;
 
-            JFrame frame = new MyFrame();
+            frame = new MyFrame();
             this.dispose();
         }
     }
