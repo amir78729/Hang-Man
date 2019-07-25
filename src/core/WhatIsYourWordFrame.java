@@ -21,6 +21,7 @@ public class WhatIsYourWordFrame extends JFrame implements ActionListener {
 
     public WhatIsYourWordFrame(){
         super("welcome to \"HANGMAN\"! (x_x)");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(400 , 200);
         setLayout(new GridLayout(3,0));
         setLayout(new BorderLayout());
@@ -73,7 +74,7 @@ public class WhatIsYourWordFrame extends JFrame implements ActionListener {
             correctAnswers = 0;
 
             for (int i = 0; i < myWord.length(); i++)
-                guess[i] = '_' ;
+                guess[i] = '?' ;
 
             frame = new MyFrame();
             this.dispose();

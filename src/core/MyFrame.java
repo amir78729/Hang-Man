@@ -162,8 +162,7 @@ public class MyFrame extends JFrame implements ActionListener {
                         textLabel.setText(Main.toStringGuess());
                         Main.printTheGuess();
                         System.out.println("congratulations!!");
-                        disableAllButtons();
-                        EndOfTheGameFrame endOfTheGameFrame = new EndOfTheGameFrame(isDead);
+                        gameIsEnded();
                         flag = true;
                         break;
                     }
@@ -183,8 +182,7 @@ public class MyFrame extends JFrame implements ActionListener {
             if(wrongAnswers >= 6){
                 System.out.println("YOU LOSE!");
                 isDead = true;
-                disableAllButtons();
-                EndOfTheGameFrame endOfTheGameFrame = new EndOfTheGameFrame(isDead);
+                gameIsEnded();
                 return;
             }
         ///////////////////////
@@ -281,6 +279,10 @@ public class MyFrame extends JFrame implements ActionListener {
         y.setEnabled(false);
         z.setEnabled(false);
     }
-
+     public void gameIsEnded(){
+         disableAllButtons();
+         EndOfTheGameFrame endOfTheGameFrame = new EndOfTheGameFrame(isDead);
+         this.setEnabled(false);
+     }
 
 }

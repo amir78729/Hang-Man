@@ -13,6 +13,7 @@ public class EndOfTheGameFrame extends JFrame implements ActionListener {
 
     public EndOfTheGameFrame(boolean isDead){
         super("Game Ended!");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(400 , 200);
         setLayout(new GridLayout(3,0));
         setLayout(new BorderLayout());
