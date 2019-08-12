@@ -35,6 +35,7 @@ public class MyFrame extends JFrame implements ActionListener {
     private MyButtons x;
     private MyButtons y;
     private MyButtons z;
+    JPanel textLabelPanel;
 
     JLabel textLabel = new JLabel();
 
@@ -137,7 +138,9 @@ public class MyFrame extends JFrame implements ActionListener {
         textLabel.setText(Main.toStringGuess());
 
         add(buttonsPanel , BorderLayout.SOUTH);
-        add(textLabel , BorderLayout.CENTER);
+        textLabelPanel = new JPanel(new BorderLayout());
+        textLabelPanel.add(textLabel, BorderLayout.CENTER);
+        add(textLabelPanel , BorderLayout.CENTER);
         setVisible(true);
     }
 
@@ -180,7 +183,27 @@ public class MyFrame extends JFrame implements ActionListener {
             System.out.println("FALSE guess");
         ///////////////////////
             wrongAnswers++;
+            switch (wrongAnswers){
+                case 1:
+                    textLabelPanel.setBackground(new Color(255,133,133));
+                    break;
+                case 2:
+                    textLabelPanel.setBackground(new Color(255,50,50));
+                    break;
+                case 3:
+                    textLabelPanel.setBackground(new Color(192,0,0));
+                    textLabel.setForeground(Color.white);
+                    break;
+                case 4:
+                    textLabelPanel.setBackground(new Color(127,0,0));
+                    break;
+                case 5:
+                    textLabelPanel.setBackground(new Color(62,0,0));
+                    break;
+            }
             if(wrongAnswers >= 6){
+                textLabelPanel.setBackground(Color.black);
+                textLabel.setForeground(Color.red);
                 System.out.println("YOU LOSE!");
                 isDead = true;
                 gameIsEnded();
