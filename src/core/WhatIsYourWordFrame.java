@@ -10,23 +10,22 @@ import static core.Main.*;
 
 public class WhatIsYourWordFrame extends JFrame implements ActionListener {
 
-    private JLabel question;
     private JTextField nameArea;
     private JButton play;
     private JFrame frame;
 
-    public void closeGameFrame() {
+    void closeGameFrame() {
         this.frame.dispose();
     }
 
-    public WhatIsYourWordFrame(){
+    WhatIsYourWordFrame(){
         super("welcome to \"HANGMAN\"! (x_x)");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(400 , 200);
         setLayout(new GridLayout(3,0));
         setLayout(new BorderLayout());
         setForeground(Color.black);
-        question = new JLabel("What is your word?!");
+        JLabel question = new JLabel("What is your word?!");
         question.setFont(new Font("Bradley Hand ITC" , Font.BOLD , 25));
         question.setVerticalAlignment(JLabel.CENTER);
         question.setHorizontalAlignment(JLabel.CENTER);

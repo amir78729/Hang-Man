@@ -35,11 +35,11 @@ public class MyFrame extends JFrame implements ActionListener {
     private MyButtons x;
     private MyButtons y;
     private MyButtons z;
-    JPanel textLabelPanel;
+    private JPanel textLabelPanel;
 
-    JLabel textLabel = new JLabel();
+    private JLabel textLabel = new JLabel();
 
-    public MyFrame(){
+    MyFrame(){
         super("HANGMAN x_x");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -146,17 +146,16 @@ public class MyFrame extends JFrame implements ActionListener {
 
 
     /**
-     * this methid is going to call when the user choose a character in the frame
-     * @param isTheAnswerCorrect
+     * this method is going to call when the user choose a character in the frame
+     * @param isTheAnswerCorrect a boolean parameter that shows your guess is correct or not
      */
-    public void press(MyButtons button,  boolean isTheAnswerCorrect){
+    private void press(MyButtons button, boolean isTheAnswerCorrect){
         System.out.println("button pressed");
         //if your answer was TRUE...
         if(isTheAnswerCorrect){
             button.setBackground(new Color(0,150,0));
             button.setForeground(Color.white);
             System.out.println("TRUE guess");
-            //////////////////
             boolean flag = false;
             for(int i = 0; i < myWord.length(); i++) {//check
                 if (myWord.charAt(i) == button.getChar()) {
@@ -174,14 +173,12 @@ public class MyFrame extends JFrame implements ActionListener {
             }
             if (flag)
                 return;
-        //////////////////
         }
         //if your answer was FALSE...
         else{
             button.setBackground(new Color(150,0,0));
             button.setForeground(Color.white);
             System.out.println("FALSE guess");
-        ///////////////////////
             wrongAnswers++;
             switch (wrongAnswers){
                 case 1:
@@ -200,16 +197,14 @@ public class MyFrame extends JFrame implements ActionListener {
                 case 5:
                     textLabelPanel.setBackground(new Color(62,0,0));
                     break;
+                default:
+                    textLabelPanel.setBackground(Color.black);
+                    textLabel.setForeground(Color.red);
+                    System.out.println("YOU LOSE!");
+                    isDead = true;
+                    gameIsEnded();
+                    return;
             }
-            if(wrongAnswers >= 6){
-                textLabelPanel.setBackground(Color.black);
-                textLabel.setForeground(Color.red);
-                System.out.println("YOU LOSE!");
-                isDead = true;
-                gameIsEnded();
-                return;
-            }
-        ///////////////////////
         }
         button.setEnabled(false);
         Main.printTheGuess();
@@ -275,37 +270,37 @@ public class MyFrame extends JFrame implements ActionListener {
         }
     }
 
-    public void disableAllButtons(){
-        a.setEnabled(false);
-        b.setEnabled(false);
-        c.setEnabled(false);
-        d.setEnabled(false);
-        e.setEnabled(false);
-        f.setEnabled(false);
-        g.setEnabled(false);
-        h.setEnabled(false);
-        i.setEnabled(false);
-        j.setEnabled(false);
-        k.setEnabled(false);
-        l.setEnabled(false);
-        m.setEnabled(false);
-        n.setEnabled(false);
-        o.setEnabled(false);
-        p.setEnabled(false);
-        q.setEnabled(false);
-        r.setEnabled(false);
-        s.setEnabled(false);
-        t.setEnabled(false);
-        u.setEnabled(false);
-        v.setEnabled(false);
-        w.setEnabled(false);
-        x.setEnabled(false);
-        y.setEnabled(false);
-        z.setEnabled(false);
+    private void disableAllButtons(){
+        this.a.setEnabled(false);
+        this.b.setEnabled(false);
+        this.c.setEnabled(false);
+        this.d.setEnabled(false);
+        this.e.setEnabled(false);
+        this.f.setEnabled(false);
+        this.g.setEnabled(false);
+        this.h.setEnabled(false);
+        this.i.setEnabled(false);
+        this.j.setEnabled(false);
+        this.k.setEnabled(false);
+        this.l.setEnabled(false);
+        this.m.setEnabled(false);
+        this.n.setEnabled(false);
+        this.o.setEnabled(false);
+        this.p.setEnabled(false);
+        this.q.setEnabled(false);
+        this.r.setEnabled(false);
+        this.s.setEnabled(false);
+        this.t.setEnabled(false);
+        this.u.setEnabled(false);
+        this.v.setEnabled(false);
+        this.w.setEnabled(false);
+        this.x.setEnabled(false);
+        this.y.setEnabled(false);
+        this.z.setEnabled(false);
     }
-     public void gameIsEnded(){
+     private void gameIsEnded(){
          disableAllButtons();
-         EndOfTheGameFrame endOfTheGameFrame = new EndOfTheGameFrame(isDead);
+         new EndOfTheGameFrame(isDead);
          this.setEnabled(false);
      }
 

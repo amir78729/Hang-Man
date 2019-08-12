@@ -11,7 +11,7 @@ public class EndOfTheGameFrame extends JFrame implements ActionListener {
     private JLabel text;
     private JButton play;
 
-    public EndOfTheGameFrame(boolean isDead){
+    EndOfTheGameFrame(boolean isDead){
         super("Game Ended!");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(400 , 200);
