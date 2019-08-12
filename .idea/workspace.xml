@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f14efa13-4211-4da2-b328-3b527aa3846a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/EndOfTheGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EndOfTheGameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/MyFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,8 +34,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/WhatIsYourWordFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="74" column="35" lean-forward="true" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+            <state relative-caret-position="-34">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/EndOfTheGameFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/MyButtons.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,11 +70,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/MyFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1148">
-              <caret line="305" lean-forward="true" selection-start-line="305" selection-end-line="305" />
+            <state relative-caret-position="186">
+              <caret line="167" column="67" selection-start-line="167" selection-start-column="67" selection-end-line="167" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4451#5354#1" />
                 <element signature="e#5405#5906#1" />
                 <element signature="method#actionPerformed#0;class#MyFrame#0" />
               </folding>
@@ -70,9 +95,9 @@
       <find>.getSource</find>
       <find>question</find>
       <find>this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);</find>
-      <find>wrongAnswers</find>
       <find>font</find>
       <find>textLabel</find>
+      <find>wrongAnswers</find>
     </findStrings>
     <replaceStrings>
       <replace>vent.getSource</replace>
@@ -92,10 +117,10 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/MyFrame.java" />
         <option value="$PROJECT_DIR$/src/MyButtons.java" />
-        <option value="$PROJECT_DIR$/src/core/MyButtons.java" />
         <option value="$PROJECT_DIR$/src/core/Main.java" />
-        <option value="$PROJECT_DIR$/src/core/EndOfTheGameFrame.java" />
         <option value="$PROJECT_DIR$/src/core/WhatIsYourWordFrame.java" />
+        <option value="$PROJECT_DIR$/src/core/MyButtons.java" />
+        <option value="$PROJECT_DIR$/src/core/EndOfTheGameFrame.java" />
         <option value="$PROJECT_DIR$/src/core/MyFrame.java" />
       </list>
     </option>
@@ -194,7 +219,7 @@
       <workItem from="1563983518391" duration="17927000" />
       <workItem from="1564036814466" duration="4007000" />
       <workItem from="1564347332923" duration="54000" />
-      <workItem from="1565603080291" duration="3535000" />
+      <workItem from="1565603080291" duration="4126000" />
     </task>
     <task id="LOCAL-00001" summary="added files">
       <created>1563983557787</created>
@@ -266,17 +291,24 @@
       <option name="project" value="LOCAL" />
       <updated>1565606107553</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="handling some warnings">
+      <created>1565606868028</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565606868028</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29396000" />
+    <option name="totallyTimeSpent" value="29987000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.04709576" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24281392" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -285,7 +317,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4003322" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39443535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -321,29 +353,10 @@
     <MESSAGE value=" _ _ _ _ -&gt; ? ? ? ?" />
     <MESSAGE value="if your word wasn't entered, the play button is not going to be available" />
     <MESSAGE value="When your answer is false, the window will get darker" />
-    <option name="LAST_COMMIT_MESSAGE" value="When your answer is false, the window will get darker" />
+    <MESSAGE value="handling some warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="handling some warnings" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/core/MyButtons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/EndOfTheGameFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-865">
@@ -356,8 +369,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/WhatIsYourWordFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="74" column="35" lean-forward="true" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+        <state relative-caret-position="-34">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/EndOfTheGameFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/MyButtons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -366,11 +399,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/MyFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1148">
-          <caret line="305" lean-forward="true" selection-start-line="305" selection-end-line="305" />
+        <state relative-caret-position="186">
+          <caret line="167" column="67" selection-start-line="167" selection-start-column="67" selection-end-line="167" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4451#5354#1" />
             <element signature="e#5405#5906#1" />
             <element signature="method#actionPerformed#0;class#MyFrame#0" />
           </folding>

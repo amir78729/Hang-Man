@@ -19,7 +19,7 @@ public class EndOfTheGameFrame extends JFrame implements ActionListener {
         setLayout(new BorderLayout());
         setForeground(Color.black);
         text = new JLabel();
-        if(Main.isDead)
+        if(isDead)
             text.setText("You LOSE! x_x");
         else
             text.setText("You WON! ^_^");

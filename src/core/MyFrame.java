@@ -164,6 +164,8 @@ public class MyFrame extends JFrame implements ActionListener {
                     if (correctAnswers >= myWord.length()) {
                         textLabel.setText(Main.toStringGuess());
                         Main.printTheGuess();
+                        textLabel.setForeground(Color.white);
+                        textLabelPanel.setBackground(new Color(0,100,0));
                         System.out.println("congratulations!!");
                         gameIsEnded();
                         flag = true;
