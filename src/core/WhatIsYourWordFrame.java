@@ -67,17 +67,19 @@ public class WhatIsYourWordFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==play){
-            myWord = nameArea.getText();
-            myWord = myWord.toUpperCase();
-            guess= new char[myWord.length()];
-            wrongAnswers = 0;
-            correctAnswers = 0;
+            if(!nameArea.getText().equals("")){
+                myWord = nameArea.getText();
+                myWord = myWord.toUpperCase();
+                guess= new char[myWord.length()];
+                wrongAnswers = 0;
+                correctAnswers = 0;
 
-            for (int i = 0; i < myWord.length(); i++)
-                guess[i] = '?' ;
+                for (int i = 0; i < myWord.length(); i++)
+                    guess[i] = '?' ;
 
-            frame = new MyFrame();
-            this.dispose();
+                frame = new MyFrame();
+                this.dispose();
+            }
         }
     }
 }

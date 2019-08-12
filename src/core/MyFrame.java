@@ -35,6 +35,7 @@ public class MyFrame extends JFrame implements ActionListener {
     private MyButtons x;
     private MyButtons y;
     private MyButtons z;
+
     JLabel textLabel = new JLabel();
 
     public MyFrame(){
