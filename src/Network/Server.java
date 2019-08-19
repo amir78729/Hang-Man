@@ -9,16 +9,16 @@ public class Server {
     private ServerSocket serverSocket;
     private Socket client;
     int port = 5000;
-    private HashMap<Client, Socket> clients;
+    private HashMap<String, ClientHandler> clients;
 
     public Server(){
         try {
             serverSocket = new ServerSocket(port);
-            clients = new HashMap<Client, Socket>();
+            clients = new HashMap<String, ClientHandler>();
             System.out.println("Server Created!");
             while(true){
                 client = serverSocket.accept();
-                System.out.println("New Client Connected!");
+                //pm haye client be server inja chap mishan chon starte handler injas
                 new Thread(new ClientHandler(client,this)).start();
 
             }
@@ -27,6 +27,12 @@ public class Server {
             e.printStackTrace();
         }
 
+    }
+    public void addToClients(String username, ClientHandler clientHandler){
+        clients.put(username, clientHandler);
+    }
+    public ClientHandler findClient(String username){
+        return clients.get(username);
     }
 
     public static void main(String[] args) {

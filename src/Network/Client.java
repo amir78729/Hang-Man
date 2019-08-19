@@ -29,10 +29,21 @@ public class Client {
             System.out.println("Server: " + msg);
             Scanner sc = new Scanner(System.in);
             writer.println(sc.nextLine());
+            //client be cHandler pm mide vali pm haye daryaft shode tu serverManger chap mishan chon inja sakhte mishan
+            new Thread(new ServerMessageManager(reader)).start();
+           while (true)
+               sendChat();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void sendChat() throws IOException {
+        System.out.println("who do u want to talk to?");
+        Scanner sc = new Scanner(System.in);
+        writer.println(sc.nextLine());
+        System.out.println("Whats your message?");
+        writer.println(sc.nextLine());
     }
 
     public static void main(String[] args) {
