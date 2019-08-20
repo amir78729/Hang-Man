@@ -31,23 +31,23 @@ public class Client {
             writer.println(sc.nextLine());
             //client be cHandler pm mide vali pm haye daryaft shode tu serverManger chap mishan chon inja sakhte mishan
             new Thread(new ServerMessageManager(reader)).start();
-           while (true)
-               sendChat();
+//           while (true)
+//               sendChat();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void sendChat() throws IOException {
+    public void sendChat(String another, String message) throws IOException {
         System.out.println("who do u want to talk to?");
-        Scanner sc = new Scanner(System.in);
-        writer.println(sc.nextLine());
+        //Scanner sc = new Scanner(System.in);
+        writer.println(another);
         System.out.println("Whats your message?");
-        writer.println(sc.nextLine());
+        writer.println(message);
     }
 
-    public static void main(String[] args) {
-        new Client();
-    }
+//    public static void main(String[] args) {
+//        new Client();
+//    }
 
 }

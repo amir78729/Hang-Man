@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import static core.Main.*;
 
@@ -67,7 +68,12 @@ public class WhatIsYourWordFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==play){
             if(!nameArea.getText().equals("")){
-                myWord = nameArea.getText();
+//                myWord = nameArea.getText();
+                try {
+                    Main.getClient().sendChat("rozhin", nameArea.getText());
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
                 myWord = myWord.toUpperCase();
                 guess= new char[myWord.length()];
                 wrongAnswers = 0;
@@ -80,5 +86,10 @@ public class WhatIsYourWordFrame extends JFrame implements ActionListener {
                 this.dispose();
             }
         }
+    }
+
+    public static void setMyWord(String guess){
+        myWord = guess;
+        System.out.println(guess + "  here  " + myWord);
     }
 }

@@ -1,5 +1,7 @@
 package core;
 
+import Network.Client;
+
 import javax.swing.*;
 import java.util.Scanner;
 
@@ -12,6 +14,7 @@ public class Main {
     public static int wrongAnswers;
     public static int correctAnswers;
     public static WhatIsYourWordFrame start;
+    private static Client client;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -20,6 +23,8 @@ public class Main {
 //        myWord = scanner.nextLine();
 //        myWord = myWord.toUpperCase();
         isDead = false;
+
+        client = new Client();
 //        guess= new char[myWord.length()];
 //        wrongAnswers = 0;
 //        correctAnswers = 0;
@@ -90,6 +95,10 @@ public class Main {
             if(str.charAt(i) == chr)
                 return true;
         return false;
+    }
+
+    public static Client getClient() {
+        return client;
     }
 }
 
